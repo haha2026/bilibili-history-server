@@ -107,7 +107,7 @@ app.delete('/api/history/:id', async (req, res) => {
     const biliJct = biliJctMatch[1];
 
     // 调用B站API删除远程内容
-    const kid = `archive_${id}`;
+    const kid = `${item.business}_${id}`;
     const response = await fetch('https://api.bilibili.com/x/v2/history/delete', {
       method: 'POST',
       headers: {
